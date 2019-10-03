@@ -25,13 +25,10 @@ gem 'sprockets-rails', :require => 'sprockets/railtie'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
-# Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
+gem 'jquery-rails'
+gem 'bootstrap', '~> 4.3.1'
 
-# gem 'bootstrap', '~> 4.0.0.alpha3'
-gem 'bootstrap-sass', '~> 3.2.0'
-# gem 'jquery-rails'
-# gem "twitter-bootstrap-rails"
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.1.0'
 end

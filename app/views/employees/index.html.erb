@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-<%= link_to "Home", root_path %>
+<%= link_to "SigraGroup", root_path, class: "navbar-brand js-scroll-trigger" %>
 
   <section class="bg-light page-section" id="team">
     <div class="container">
@@ -9,41 +9,40 @@
           <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
         </div>
       </div>
-    <% @employees.each do |employee| %>
+      <% @employees.each do |employee| %>
       <div class="row">
         <div class="col-sm-4">
           <div class="team-member">
-            <!-- <img class="mx-auto rounded-circle" src="img/team/1.jpg" alt=""> -->
-            <div class="mx-auto rounded-circle" >
-              <%= image_tag(employee.image, class: "mx-auto rounded-circle") if employee.image.attached? %>
-            </div>
-            <h4><%= employee.f_name %></h4>
-            <p class="text-muted"><%= employee.position %></p>
+            <%= image_tag(employee.image, :class => "mx-auto rounded-circle") if employee.image.attached? %>
+            <h4><%= employee.f_name + " " + employee.l_name %></h4>
+            <p class="text-muted">
+              <%= employee.position %><br>
+              <i>
+                <%= employee.email %>
+                </i>
+            </p>
             <ul class="list-inline social-buttons">
               <li class="list-inline-item">
-                <a href="#">
-                  <i class="fab fa-twitter"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">
-                  <i class="fab fa-facebook-f"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">
+                <%= link_to employee.linkdin do %>
                   <i class="fab fa-linkedin-in"></i>
-                </a>
+                <% end %>
               </li>
+              <li class="list-inline-item">
+                <%= link_to employee.facebook do %>
+                  <i class="fab fa-facebook-f"></i>
+                <% end %>
+              </li>
+              <% if employee.twitter == " " %>
+                <li class="list-inline-item">
+                  <%= link_to employee.twitter do %>
+                    <i class="fab fa-twitter"></i>
+                  <% end %>
+                </li>
+              <% end %>
             </ul>
           </div>
         </div>
       </div>
-    <% end %>
-      <div class="row">
-        <div class="col-lg-8 mx-auto text-center">
-          <p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
-        </div>
-      </div>
+      <% end %>
     </div>
   </section>

@@ -3,11 +3,10 @@
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
 
-//= require jquery
-//= require jquery_ujs
-//= require rails_ujs
-//= require bootstrap-sprockets
-//= require tether
-//= require popper
-//= require ckeditor/init
-//= require_tree .
+//import 'jquery'; 
+//import 'popper';
+//import 'bootstrap';
+//import 'tether'
+//import 'ckeditor/init' // aista nu cred ca o sa mearga asa
+//import 'agency'
+//import 'jssor.slider-27.5.0.min'
