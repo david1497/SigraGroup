@@ -5,7 +5,77 @@ RailsAdmin.config do |config|
 #      field :description, :ck_editor
 #    end
 #  end
+  # config.authenticate_with do
+  #   authenticate_or_request_with_http_basic('Login required') do |name, password, key|
+  #     user = User.where(name: name, password: password, key: key).first
+  #     user
+  #   end
+  # end
+  config.model "Partner" do
+    label "Clients"
+    list do 
+      field :p_name do 
+        label "Name"
+      end
+      field :p_link do
+        label "Link"
+      end
+    end
+  end
 
+  config.model "Employee" do
+    list do
+      field :f_name do
+        label "First Name"
+      end
+      field :l_name do
+        label "Last Name"
+      end
+      field :position do
+        label "Position"
+      end
+      field :email do 
+        label "Email"
+      end
+    end
+  end
+
+  config.model "ContactRequest" do
+    label "Requests"
+    field :id do
+      label "Number"
+    end
+    field :u_name do
+      label "Name"      
+    end
+    field :u_email do
+      label "Email"
+    end
+    field :u_tel do
+      label "Phone"
+    end
+    field :created_at do
+      label "Sent"
+    end
+  end
+
+  config.model "Service" do
+    field :name do
+      label "Name"
+    end
+    field :created_at do
+      label "Created"
+    end
+    field :updated_at do
+      label "Updated"
+    end
+  end
+
+  config.model "Mission" do
+    list do
+      items_per_page 1
+    end
+  end
   ### Popular gems integration
 
   ## == Devise ==

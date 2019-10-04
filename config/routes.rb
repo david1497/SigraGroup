@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
+  resources :problems
+  resources :missions
   resources :services
   resources :partners
   resources :contact_requests
-  mount RailsAdmin::Engine => '/administrator', as: 'rails_admin'
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   mount Ckeditor::Engine => '/ckeditor'
 
   resources :employees

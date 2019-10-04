@@ -29,6 +29,8 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'jquery-rails'
 gem 'bootstrap', '~> 4.3.1'
 
+gem 'bcrypt'
+
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.1.0'
 end
