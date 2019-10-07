@@ -1,6 +1,4 @@
 <p id="notice"><%= notice %></p>
-<%= link_to "SigraGroup", root_path, class: "navbar-brand js-scroll-trigger" %>
-
   <section class="bg-light page-section" id="team">
     <div class="container">
       <div class="row">
@@ -9,17 +7,21 @@
           <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
         </div>
       </div>
-      <% @employees.each do |employee| %>
       <div class="row">
+      <% @employees.each do |employee| %>
         <div class="col-sm-4">
           <div class="team-member">
-            <%= image_tag(employee.image, :class => "mx-auto rounded-circle") if employee.image.attached? %>
+            <% if employee.image.attached? %>
+              <%= image_tag(employee.image, :class => "mx-auto rounded-circle") %>
+            <% else %>
+              <%= image_tag("photo_missing.png", :class => "mx-auto rounded-circle") %>
+            <% end %>
             <h4><%= employee.f_name + " " + employee.l_name %></h4>
             <p class="text-muted">
               <%= employee.position %><br>
               <i>
                 <%= employee.email %>
-                </i>
+              </i>
             </p>
             <ul class="list-inline social-buttons">
               <li class="list-inline-item">
@@ -32,7 +34,7 @@
                   <i class="fab fa-facebook-f"></i>
                 <% end %>
               </li>
-              <% if employee.twitter == " " %>
+              <% if employee.twitter != "" %>
                 <li class="list-inline-item">
                   <%= link_to employee.twitter do %>
                     <i class="fab fa-twitter"></i>
@@ -42,7 +44,7 @@
             </ul>
           </div>
         </div>
-      </div>
       <% end %>
+      </div>
     </div>
   </section>

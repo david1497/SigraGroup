@@ -11,6 +11,8 @@ RailsAdmin.config do |config|
   #     user
   #   end
   # end
+  config.excluded_models = ["Assets"]
+
   config.model "Partner" do
     label "Clients"
     list do 
@@ -21,6 +23,7 @@ RailsAdmin.config do |config|
         label "Link"
       end
     end
+
   end
 
   config.model "Employee" do
@@ -60,20 +63,31 @@ RailsAdmin.config do |config|
   end
 
   config.model "Service" do
-    field :name do
-      label "Name"
+    list do
+      field :name do
+        label "Name"
+      end
+      field :created_at do
+        label "Created"
+      end
+      field :updated_at do
+        label "Updated"
+      end
     end
-    field :created_at do
-      label "Created"
-    end
-    field :updated_at do
-      label "Updated"
+    edit do
+      field :name
+      field :description, :ck_editor
+      field :image
+      field :file
     end
   end
 
   config.model "Mission" do
     list do
       items_per_page 1
+    end
+    edit do
+      field :content, :ck_editor
     end
   end
   ### Popular gems integration

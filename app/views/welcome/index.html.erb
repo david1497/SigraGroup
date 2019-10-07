@@ -1,235 +1,182 @@
-<!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-    <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="#page-top">SigraGroup</a>
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        Menu
-        <i class="fas fa-bars"></i>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav text-uppercase ml-auto">
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#mission">Mission</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#problems">Problems</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#services">Services</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#team">Team</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#clients">Clients</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
-          </li>
-        </ul>
+<!-- Header -->
+<header class="masthead">
+  <div class="container">
+    <div class="intro-text">
+      <div class="intro-lead-in">Welcome To Our Studio!</div>
+      <div class="intro-heading text-uppercase">It's Nice To Meet You</div>
+      <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Tell Me More</a>
+    </div>
+  </div>
+</header>
+
+<!-- Mission -->
+<section class="page-section" id="mission">
+  <div class="container">
+    <!-- The video -->
+    <div class="row">
+      <video autoplay muted loop id="myVideo">
+        <source src="https://storage.googleapis.com/coverr-main/mp4/Mt_Baker.mp4" type="video/mp4">
+      </video>
+      <div class="col-lg-12 text-center">
+        <h2 class="section-heading text-uppercase">Our Mission</h2>
+        <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
       </div>
     </div>
-  </nav>
+  </div>
+</section>
 
-  <!-- Header -->
-  <header class="masthead">
-    <div class="container">
-      <div class="intro-text">
-        <div class="intro-lead-in">Welcome To Our Studio!</div>
-        <div class="intro-heading text-uppercase">It's Nice To Meet You</div>
-        <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Tell Me More</a>
+<!-- Problems -->
+<section class="page-section" id="problems">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2 class="section-heading text-uppercase">Problems</h2>
+        <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
       </div>
     </div>
-  </header>
+  </div>
+</section>
 
-  <!-- Mission -->
-  <section class="page-section" id="mission">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 text-center">
-          <h2 class="section-heading text-uppercase">Our Mission</h2>
-          <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-        </div>
+<!-- Services -->
+<section class="page-section" id="services">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2 class="section-heading text-uppercase">Services</h2>
+        <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
       </div>
     </div>
-  </section>
-
-  <!-- Problems -->
-  <section class="page-section" id="problems">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 text-center">
-          <h2 class="section-heading text-uppercase">Problems</h2>
-          <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Services -->
-  <section class="page-section" id="services">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 text-center">
-          <h2 class="section-heading text-uppercase">Services</h2>
-          <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-        </div>
-      </div>
-      <div class="row text-center">
-	     <% @services.each do |service| %>
-          <%= link_to(@service) do %>
-            <div class="col-md-4">
-              <span class="fa-stack fa-4x">
-                <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
-              </span>
-              <h4 class="service-heading"><%= service.name %></h4>
-              <p class="text-muted"><%= service.description.truncate(130) %></p>
-            </div>
-          <% end %>
-      	<% end %>
-      </div>
-    </div>
-  </section>
-
-  <!-- Team -->
-  <section class="bg-light page-section" id="team">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 text-center">
-          <h2 class="section-heading text-uppercase">Our Amazing Team</h2>
-          <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-        </div>
-      </div>
-      <%= link_to "Meet our team", employees_path %>
-      <div class="row">
-        <div class="col-lg-8 mx-auto text-center">
-          <p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Clients -->
-  <section class="bg-light page-section" id="clients">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 text-center">
-          <h2 class="section-heading text-uppercase">Our Clients</h2>
-          <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-8 mx-auto text-center">
-          <p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
-        </div>
-      </div>
-      <!-- cacatu -->
-      <div id="jssor_1" style="position:relative;margin:0 auto;top:0px;left:0px;width:980px;height:150px;overflow:hidden;visibility:hidden;">
-        <!-- Loading Screen -->
-        <div data-u="loading" class="jssorl-009-spin" style="position:absolute;top:0px;left:0px;width:100%;height:100%;text-align:center;background-color:rgba(0,0,0,0.7);">
-          <%= image_tag("spin.svg", style: "margin-top:-19px;position:relative;top:50%;width:38px;height:38px;") %>
-            <!-- <img style="margin-top:-19px;position:relative;top:50%;width:38px;height:38px;" src="img/spin.svg" /> -->
-        </div>
-        <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:980px;height:150px;overflow:hidden;">
-          <% @partners.each do |partner| %>
-            <%= link_to partner.p_link do %>
-              <div>
-                <%= image_tag(partner.image, class: "image") if partner.image.attached? %>
-              </div>
-            <% end %>
-          <% end %>
-        </div>
-        <!-- Bullet Navigator -->
-        <div data-u="navigator" class="jssorb057" style="position:absolute;bottom:12px;right:12px;" data-autocenter="1" data-scale="0.5" data-scale-bottom="0.75">
-          <div data-u="prototype" class="i" style="width:16px;height:16px;">
-            <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
-              <circle class="b" cx="8000" cy="8000" r="5000"></circle>
-            </svg>
+    <div class="row text-center">
+      <% if @services.length == 2 %>
+        <% @services.each do |service| %>
+          <div class="col-md-6">
+            <span class="fa-stack fa-4x">
+              <% if service.image.attached? %>
+                <div class="service-image">
+                  <%= link_to image_tag(service.image, :class => "mx-auto rounded-circle"), service %>
+                </div>
+              <% else %>
+                <%= link_to service do %>
+                  <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                  <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
+                <% end %> 
+              <% end %>
+            </span>
+            <h4 class="service-heading"><%= link_to service.name, service %></h4>
+            <p class="text-muted"><%= service.description.truncate(200).html_safe %></p>
           </div>
-        </div>
-        <!-- Arrow Navigator -->
-        <div data-u="arrowleft" class="jssora073" style="width:50px;height:50px;top:0px;left:30px;" data-autocenter="2" data-scale="0.75" data-scale-left="0.75">
+        <% end %>
+      <% else %>  
+        <% @services.each do |service| %>
+          <div class="col-md-4">
+            <span class="fa-stack fa-4x">
+              <% if service.image.attached? %>
+                <div class="service-image">
+                  <%= link_to image_tag(service.image, :class => "mx-auto rounded-circle"), service %>
+                </div>
+              <% else %>
+                <%= link_to service do %>
+                  <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                  <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
+                <% end %>
+              <% end %>
+            </span>
+            <h4 class="service-heading"><%= link_to service.name, service %></h4>
+            <p class="text-muted"><%= service.description.truncate(130).html_safe %></p>
+          </div>
+  	    <% end %>
+        <% if @services.length >= 3 %>
+          <%= link_to "All services", services_path, class: "btn btn-primary btn-xl text-uppercase js-scroll-trigger" %>
+        <% end %>  
+      <% end %>
+    </div>
+  </div>
+</section>
+
+<!-- Team -->
+<section class="bg-light page-section" id="team">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2 class="section-heading text-uppercase">Our Amazing Team</h2>
+        <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+      </div>
+    </div>
+    <!-- <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Tell Me More</a> -->
+    <div class="row">
+      <div class="col-lg-8 mx-auto text-center">
+        <p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
+      </div>
+    </div>
+    <%= link_to "Meet our team", employees_path, class: "btn btn-primary btn-xl text-uppercase js-scroll-trigger" %>
+  </div>
+</section>
+
+<!-- Clients -->
+<section class="bg-light page-section" id="clients">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2 class="section-heading text-uppercase">Our Clients</h2>
+        <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-8 mx-auto text-center">
+        <p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
+      </div>
+    </div>
+
+
+    <div id="jssor_1" style="position:relative;margin:0 auto;top:0px;left:0px;width:980px;height:150px;overflow:hidden;visibility:hidden;">
+      <!-- Loading Screen -->
+      <div data-u="loading" class="jssorl-009-spin" style="position:absolute;top:0px;left:0px;width:100%;height:100%;text-align:center;background-color:rgba(0,0,0,0.7);">
+          <!-- <img style="margin-top:-19px;position:relative;top:50%;width:38px;height:38px;" src="spin.svg" /> -->
+          <%= image_tag("spin.svg", style: "margin-top:-19px;position:relative;top:50%;width:38px;height:38px;") %>
+      </div>
+      <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:980px;height:150px;overflow:hidden;">
+        <% @partners.each do |partner| %>
+          <div>
+            <img data-u="image">
+              <%= link_to image_tag(partner.image), partner.p_link %>
+            </img>
+          </div>
+        <% end %>
+      </div>
+      <!-- Bullet Navigator -->
+      <div data-u="navigator" class="jssorb057" style="position:absolute;bottom:12px;right:12px;" data-autocenter="1" data-scale="0.5" data-scale-bottom="0.75">
+        <div data-u="prototype" class="i" style="width:16px;height:16px;">
           <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
-            <path class="a" d="M4037.7,8357.3l5891.8,5891.8c100.6,100.6,219.7,150.9,357.3,150.9s256.7-50.3,357.3-150.9 l1318.1-1318.1c100.6-100.6,150.9-219.7,150.9-357.3c0-137.6-50.3-256.7-150.9-357.3L7745.9,8000l4216.4-4216.4 c100.6-100.6,150.9-219.7,150.9-357.3c0-137.6-50.3-256.7-150.9-357.3l-1318.1-1318.1c-100.6-100.6-219.7-150.9-357.3-150.9 s-256.7,50.3-357.3,150.9L4037.7,7642.7c-100.6,100.6-150.9,219.7-150.9,357.3C3886.8,8137.6,3937.1,8256.7,4037.7,8357.3 L4037.7,8357.3z"></path>
-          </svg>
-        </div>
-        <div data-u="arrowright" class="jssora073" style="width:50px;height:50px;top:0px;right:30px;" data-autocenter="2" data-scale="0.75" data-scale-right="0.75">
-          <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
-            <path class="a" d="M11962.3,8357.3l-5891.8,5891.8c-100.6,100.6-219.7,150.9-357.3,150.9s-256.7-50.3-357.3-150.9 L4037.7,12931c-100.6-100.6-150.9-219.7-150.9-357.3c0-137.6,50.3-256.7,150.9-357.3L8254.1,8000L4037.7,3783.6 c-100.6-100.6-150.9-219.7-150.9-357.3c0-137.6,50.3-256.7,150.9-357.3l1318.1-1318.1c100.6-100.6,219.7-150.9,357.3-150.9 s256.7,50.3,357.3,150.9l5891.8,5891.8c100.6,100.6,150.9,219.7,150.9,357.3C12113.2,8137.6,12062.9,8256.7,11962.3,8357.3 L11962.3,8357.3z"></path>
+            <circle class="b" cx="8000" cy="8000" r="5000"></circle>
           </svg>
         </div>
       </div>
-      <script type="text/javascript">jssor_1_slider_init();</script>
     </div>
-  </section>
-
-  <!-- Contact -->
-  <section class="page-section" id="contact">
-    <%= render "contact_requests/form" %>
-  </section>
+    <script type="text/javascript">jssor_1_slider_init();</script>
 
 
-<script src="js/jssor.slider-27.5.0.min.js" type="text/javascript"></script>
-<script type="text/javascript">
-  jssor_1_slider_init = function() {
-    var jssor_1_options = {
-      $AutoPlay: 1,
-      $AutoPlaySteps: 5,
-      $SlideDuration: 160,
-      $SlideWidth: 200,
-      $SlideSpacing: 3,
-      $ArrowNavigatorOptions: {
-        $Class: $JssorArrowNavigator$,
-        $Steps: 5
-      },
-      $BulletNavigatorOptions: {
-        $Class: $JssorBulletNavigator$
-      }
-    };
+  </div>
+</section>
 
-    var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
+<!-- Contact -->
+<section class="page-section" id="contact">
+  <%= render "contact_requests/form" %>
+</section>
 
-    /*#region responsive code begin*/
 
-    var MAX_WIDTH = 980;
-
-    function ScaleSlider() {
-        var containerElement = jssor_1_slider.$Elmt.parentNode;
-        var containerWidth = containerElement.clientWidth;
-
-        if (containerWidth) {
-
-            var expectedWidth = Math.min(MAX_WIDTH || containerWidth, containerWidth);
-
-            jssor_1_slider.$ScaleWidth(expectedWidth);
-        }
-        else {
-            window.setTimeout(ScaleSlider, 30);
-        }
-    }
-
-    ScaleSlider();
-
-    $Jssor$.$AddEvent(window, "load", ScaleSlider);
-    $Jssor$.$AddEvent(window, "resize", ScaleSlider);
-    $Jssor$.$AddEvent(window, "orientationchange", ScaleSlider);
-    /*#endregion responsive code end*/
-  };
-</script>
 
 <style>
   /*jssor slider loading skin spin css*/
   .jssorl-009-spin img {
-      animation-name: jssorl-009-spin;
-      animation-duration: 1.6s;
-      animation-iteration-count: infinite;
-      animation-timing-function: linear;
+    animation-name: jssorl-009-spin;
+    animation-duration: 1.6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
   }
 
   @keyframes jssorl-009-spin {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
   }
 
   /*jssor slider bullet skin 057 css*/

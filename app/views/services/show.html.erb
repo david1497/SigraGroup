@@ -1,11 +1,9 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @service.name %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @service.description %>
-</p>
+<div class="container service_show">
+	<p><%= @service.name %></p>
+	<p><%= @service.description.html_safe %></p>
+  <% @service.file.each do |file| %>
+  	<%= link_to(file.filename, rails_blob_path(file, disposition: "attachment"), class: "filename") %>
+    <% file_extension = file.filename.to_s().split(".") %>
+    <%# file_extension.last %>
+  <% end %>
+</div>	

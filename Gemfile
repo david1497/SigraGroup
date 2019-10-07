@@ -28,6 +28,8 @@ gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'jquery-rails'
 gem 'bootstrap', '~> 4.3.1'
+gem 'font_awesome5_rails'
+gem 'paperclip'
 
 gem 'bcrypt'
 
