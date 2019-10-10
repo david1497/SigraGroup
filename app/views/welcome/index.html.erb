@@ -2,40 +2,49 @@
 <header class="masthead">
   <div class="container">
     <div class="intro-text">
-      <div class="intro-lead-in">Welcome To Our Studio!</div>
+      <div class="intro-lead-in">Welcome To SigraGroup!</div>
       <div class="intro-heading text-uppercase">It's Nice To Meet You</div>
       <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Tell Me More</a>
     </div>
   </div>
 </header>
 
-<!-- Mission -->
-<section class="page-section" id="mission">
+<!-- Problems -->
+<section class="page-section" id="about">
   <div class="container">
-    <!-- The video -->
     <div class="row">
-      <video autoplay muted loop id="myVideo">
-        <source src="https://storage.googleapis.com/coverr-main/mp4/Mt_Baker.mp4" type="video/mp4">
-      </video>
       <div class="col-lg-12 text-center">
-        <h2 class="section-heading text-uppercase">Our Mission</h2>
-        <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+        <h2 class="section-heading text-uppercase">Problems</h2>
+        <h3 class="section-subheading text-muted content_text">
+          <% if @article_problems != nil %>
+            <%= @article_problems.content.html_safe %>
+          <% end %>
+        </h3>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Problems -->
-<section class="page-section" id="problems">
+<!-- Mission -->
+<section class="page-section" id="mission">
   <div class="container">
+    <!-- The video -->
     <div class="row">
+      <!-- <video autoplay muted loop id="myVideo"> -->
+        <!-- <source src="https://storage.googleapis.com/coverr-main/mp4/Mt_Baker.mp4" type="video/mp4"> -->
+      <!-- </video> -->
       <div class="col-lg-12 text-center">
-        <h2 class="section-heading text-uppercase">Problems</h2>
-        <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+        <h2 class="section-heading text-uppercase">Our Mission</h2>
+        <h3 class="section-subheading text-muted content_text">
+          <% if @article_mission != nil %>
+            <%= @article_mission.content.html_safe %>
+          <% end %>
+        </h3>
       </div>
     </div>
   </div>
 </section>
+
 
 <!-- Services -->
 <section class="page-section" id="services">
@@ -43,7 +52,11 @@
     <div class="row">
       <div class="col-lg-12 text-center">
         <h2 class="section-heading text-uppercase">Services</h2>
-        <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+        <h3 class="section-subheading text-muted content_text">
+          <% if @article_services != nil %>
+            <%= @article_services.content.html_safe %>
+          <% end %>    
+        </h3>
       </div>
     </div>
     <div class="row text-center">
@@ -53,7 +66,7 @@
             <span class="fa-stack fa-4x">
               <% if service.image.attached? %>
                 <div class="service-image">
-                  <%= link_to image_tag(service.image, :class => "mx-auto rounded-circle"), service %>
+                  <%= link_to image_tag(service.image, :class => "mx-auto rounded-circle"), service, target: :_blank %>
                 </div>
               <% else %>
                 <%= link_to service do %>
@@ -62,7 +75,7 @@
                 <% end %> 
               <% end %>
             </span>
-            <h4 class="service-heading"><%= link_to service.name, service %></h4>
+            <h4 class="service-heading"><%= link_to service.name, service, target: :_blank %></h4>
             <p class="text-muted"><%= service.description.truncate(200).html_safe %></p>
           </div>
         <% end %>
@@ -72,7 +85,7 @@
             <span class="fa-stack fa-4x">
               <% if service.image.attached? %>
                 <div class="service-image">
-                  <%= link_to image_tag(service.image, :class => "mx-auto rounded-circle"), service %>
+                  <%= link_to image_tag(service.image, :class => "mx-auto rounded-circle"), service, target: :_blank %>
                 </div>
               <% else %>
                 <%= link_to service do %>
@@ -81,12 +94,12 @@
                 <% end %>
               <% end %>
             </span>
-            <h4 class="service-heading"><%= link_to service.name, service %></h4>
+            <h4 class="service-heading"><%= link_to service.name, service, target: :_blank %></h4>
             <p class="text-muted"><%= service.description.truncate(130).html_safe %></p>
           </div>
   	    <% end %>
         <% if @services.length >= 3 %>
-          <%= link_to "All services", services_path, class: "btn btn-primary btn-xl text-uppercase js-scroll-trigger" %>
+          <%= link_to "All services", services_path, class: "btn btn-primary btn-xl text-uppercase js-scroll-trigger", target: :_blank %>
         <% end %>  
       <% end %>
     </div>
@@ -99,16 +112,14 @@
     <div class="row">
       <div class="col-lg-12 text-center">
         <h2 class="section-heading text-uppercase">Our Amazing Team</h2>
-        <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+        <h3 class="section-subheading text-muted content_text">
+          <% if @article_team != nil %>
+            <%= @article_team.content.html_safe %>
+          <% end %>
+        </h3>
       </div>
     </div>
-    <!-- <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Tell Me More</a> -->
-    <div class="row">
-      <div class="col-lg-8 mx-auto text-center">
-        <p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
-      </div>
-    </div>
-    <%= link_to "Meet our team", employees_path, class: "btn btn-primary btn-xl text-uppercase js-scroll-trigger" %>
+    <%= link_to "Meet our team", employees_path, class: "btn btn-primary btn-xl text-uppercase js-scroll-trigger", target: :_blank %>
   </div>
 </section>
 
@@ -117,16 +128,18 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-12 text-center">
-        <h2 class="section-heading text-uppercase">Our Clients</h2>
-        <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+        <h2 class="section-heading text-uppercase">Our Partners</h2>
+        <h3 class="section-subheading text-muted content_text">
+          <% if @article_clients != nil %>
+            <%= @article_clients.content.html_safe %>
+          <% end %> 
+        </h3>
       </div>
     </div>
-    <div class="row">
+<!--     <div class="row">
       <div class="col-lg-8 mx-auto text-center">
-        <p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
       </div>
-    </div>
-
+    </div> -->
 
     <div id="jssor_1" style="position:relative;margin:0 auto;top:0px;left:0px;width:980px;height:150px;overflow:hidden;visibility:hidden;">
       <!-- Loading Screen -->
@@ -138,7 +151,7 @@
         <% @partners.each do |partner| %>
           <div>
             <img data-u="image">
-              <%= link_to image_tag(partner.image), partner.p_link %>
+              <%= link_to image_tag(partner.image), partner.p_link, target: :_blank %>
             </img>
           </div>
         <% end %>
@@ -154,7 +167,6 @@
     </div>
     <script type="text/javascript">jssor_1_slider_init();</script>
 
-
   </div>
 </section>
 
@@ -162,8 +174,6 @@
 <section class="page-section" id="contact">
   <%= render "contact_requests/form" %>
 </section>
-
-
 
 <style>
   /*jssor slider loading skin spin css*/

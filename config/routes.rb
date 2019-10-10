@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  resources :problems
-  resources :missions
+  resources :articles
   resources :services
   resources :partners
   resources :contact_requests

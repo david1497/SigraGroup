@@ -1,9 +1,36 @@
 <div class="container service_show">
-	<p><%= @service.name %></p>
+	<center><h5><%= @service.name %></h5></center>
 	<p><%= @service.description.html_safe %></p>
+  <% if @service.file.exists? %>
+    <h5><i>Attached files:</i></h5>
+    <hr>
+  <% end %>
   <% @service.file.each do |file| %>
-  	<%= link_to(file.filename, rails_blob_path(file, disposition: "attachment"), class: "filename") %>
     <% file_extension = file.filename.to_s().split(".") %>
-    <%# file_extension.last %>
+    <% case file_extension[1] %>
+      <% when "pdf" %>
+        <%= image_tag("pdf.png", class: "file_icon") %>
+      <% when "xls" %>
+        <%= image_tag("xls.png", class: "file_icon") %>
+      <% when "xlsx" %>
+        <%= image_tag("xls.png", class: "file_icon") %>
+      <% when "odp" %>
+        <%= image_tag("ppt.png", class: "file_icon") %>
+      <% when "ppt" %>
+        <%= image_tag("ppt.png", class: "file_icon") %>
+      <% when "pptx" %>
+        <%= image_tag("ppt.png", class: "file_icon") %>
+      <% when "odp" %>
+        <%= image_tag("ppt.png", class: "file_icon") %>
+      <% when "doc" %>
+        <%= image_tag("word.png", class: "file_icon") %>
+      <% when "docx" %>
+        <%= image_tag("word.png", class: "file_icon") %>
+      <% when "odt" %>
+        <%= image_tag("word.png", class: "file_icon") %>
+      <% else %>
+        <%= image_tag("unknown.png", class: "file_icon") %>
+    <% end %>
+  	<%= link_to(file.filename, rails_blob_path(file, disposition: "attachment"), class: "filename") %><br>
   <% end %>
 </div>	
